@@ -23,7 +23,9 @@ interface BlogArticleProps {
 }
 
 export default async function BlogArticle({ params }: BlogArticleProps) {
-  const data: fullBlog = await getData(params.slug);
+  const awaitedParams = await params;
+
+  const data: fullBlog = await getData(awaitedParams.slug);
 
   return (
     <div className="mt-8">
