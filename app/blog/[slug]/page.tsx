@@ -18,12 +18,12 @@ async function getData(slug: string) {
   return data;
 }
 
-export default async function BlogArticle({
-  params,
-}: {
+interface BlogArticleProps {
   params: { slug: string };
-}) {
-  const data: fullBlog = await getData(params?.slug);
+}
+
+export default async function BlogArticle({ params }: BlogArticleProps) {
+  const data: fullBlog = await getData(params.slug);
 
   return (
     <div className="mt-8">
