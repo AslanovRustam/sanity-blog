@@ -19,7 +19,7 @@ async function getData(slug: string) {
 }
 
 interface BlogArticleProps {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }
 
 export default async function BlogArticle({ params }: BlogArticleProps) {
